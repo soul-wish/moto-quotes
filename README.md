@@ -1,2 +1,2 @@
-moto-quotes
-===========
+Moto quotes service
+===================
