@@ -1,0 +1,99 @@
+body
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif 
+    font-size: 16px
+    line-height: 1.5
+    color: #fff
+    background: url(../images/bg.jpg) repeat 0 0 
+    
+.header 
+    
+.content
+    position: relative
+    height: 100%
+    font-size: 2.5em
+    text-align: center
+
+.footer
+    position: fixed
+    bottom: 0
+    width: 100%
+    text-align: center
+
+.quote
+    position: relative
+    top: 50%
+    display: block
+    padding: 0 2em
+    color: orange 
+    +translateY(-50%)
+    +transition(0.5s)
+    &:hover
+        color: #fff
+
+.reload, .add-quote
+    position: absolute
+    z-index: 2
+    top: 25px
+    margin: auto
+    color: #fff 
+    font-size: 2.5em
+    line-height: 1em
+    background: none
+    +transition(0.5s)
+
+.reload
+    right: 25px
+    &:hover
+        +rotate(360)
+
+.add-quote
+    left: 25px
+    +rotate(45)
+    &:hover
+        +rotate(-45)
+    &.add-quote_active
+        +rotate(0)
+        &:hover
+            +rotate(-90)
+
+.quote-block
+    position: absolute
+    display: none
+    z-index: 10
+    left: 100px
+    right: 100px
+    top: 10px
+    background: #1f2228 
+    border-radius: 10px
+    padding: 16px
+    
+.input, .textarea
+    display: block
+    width: 100%
+    margin-bottom: 10px
+    font-size: 1em
+    padding: 10px
+    border-radius: 5px
+    +box
+    +transition(0.5s)
+    &:focus
+        +scale(1.01)
+
+.textarea
+    resize: none
+
+.submit
+    float: right
+    color: #fff 
+    font-size: 1.2em
+    border-radius: 5px
+    background: orange
+    padding: 8px 15px
+    text-transform: uppercase
+    +transition(0.5s)
+    &:focus, &:hover
+        +scale(1.1)
+
+.copyright
+    font-size: 1em
+    line-height: 2em
