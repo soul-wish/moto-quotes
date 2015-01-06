@@ -42,23 +42,30 @@ $(document).ready(function(){
             "click .submit": "createQuote"
         },
         initialize: function() {
-            console.log('INIT');
             this.quote = this.$('.quote');
             this.quoteInput = this.$('.quote-input');
             this.secretWordInput = this.$('.secret-word-input');
+
+            this.showQuote();
         },
         createQuote: function(e) {
             e.preventDefault();
 
             var date = new Date();
 
-            console.log('CREATE');
             if (!this.quoteInput.val() || !this.secretWordInput.val() || this.secretWordInput.val() !== 'motofamily') { return; }
 
             this.collection.create({
                 quote: this.quoteInput.val(),
                 date: date.toString()
             });
+            addQuoteBtn.trigger('click');
+        },
+        showQuote: function() {
+            var randomModelIndex = _.random(0, this.collection.length-1);
+            var model = this.collection.get(randomModelIndex);
+            var view = new QuoteView({model: model});
+            this.quote.html(view.render().el);
         }
     });
 
