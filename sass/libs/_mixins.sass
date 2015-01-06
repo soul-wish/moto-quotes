@@ -1,0 +1,109 @@
+// responsive example, edit or remove
+$breaksmall: 500px
+
+$breaklarge: 1180px
+
+=r($media)
+	@if $media == pda
+		// narrower than $width
+		@media only screen and (max-width: $breaksmall)
+			@content
+	@else if $media == wide
+		// wider than $width
+		@media only screen and (min-width: $breaklarge)
+			@content
+
+=fs($sizeValue: 16)
+	font-size: $sizeValue + px
+	font-size: $sizeValue / 10 + rem
+
+=text-overflow
+	overflow: hidden
+	-ms-text-overflow: ellipsis
+	text-overflow: ellipsis
+	white-space: nowrap
+
+=cover
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 50% 50%
+
+// retina bg
+=retina
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+		@content
+
+=box
+	+box-sizing(border-box)
+
+//simple gradient
+=g($color1, $color2)
+	+background-image(linear-gradient($color1, $color2))
+
+=gh($color1, $color2)
+	+background-image(linear-gradient(left, $color1, $color2))
+
+//asdfast font-family
+=font($alias, $name)
+	@font-face
+		font-family: $alias
+		src: url("fonts/" + $name + ".eot")
+		src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
+		font-weight: normal
+		font-style: normal
+
+//+font(black, cytiapro-black-webfont)
+
+// ROTATE
+=rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
+	-moz-transform: rotate($deg + deg)
+	-o-transform: rotate($deg + deg)
+	-webkit-transform: rotate($deg + deg)
+	-ms-transform: rotate($deg + deg)
+	transform: rotate($deg + deg)
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand')
+	zoom: 1
+
+// TRANSITION
+=transition($what)
+	-moz-transition: $what
+	-o-transition: $what
+	-webkit-transition: $what
+	-ms-transition: $what
+	transition: $what
+
+=tr($what)
+	+transition($what)
+
+=hide-text
+	font: 0/0 a
+	text-shadow: none
+	color: transparent
+
+=hidetext
+	+hide-text
+
+=clr
+	&:after
+		content: " "
+		display: table
+		clear: both
+	*zoom: 1
+
+=placeholder-color($color)
+	&:-moz-placeholder
+		color: $color
+	&::-webkit-input-placeholder
+		color: $color
+
+=placeholder
+	&:-ms-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
+	&::placeholder
+		@content
