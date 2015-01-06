@@ -1,0 +1,257 @@
+/* line 1, ../sass/_reset.sass */
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, cite, code, em,
+img, q, small, strong, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, embed, figure, figcaption,
+footer, header, menu, nav, section, time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* line 11, ../sass/_reset.sass */
+body, html {
+  height: 100%;
+}
+
+/* line 13, ../sass/_reset.sass */
+img, fieldset, a img {
+  border: none;
+}
+
+/* line 15, ../sass/_reset.sass */
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+/* line 18, ../sass/_reset.sass */
+input[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 21, ../sass/_reset.sass */
+textarea {
+  overflow: auto;
+}
+
+/* line 23, ../sass/_reset.sass */
+input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 27, ../sass/_reset.sass */
+input, textarea, select, button,
+h1, h2, h3, h4, h5, h6, a, span, a:focus {
+  outline: none;
+}
+
+/* line 30, ../sass/_reset.sass */
+ul, ol {
+  list-style-type: none;
+}
+
+/* line 32, ../sass/_reset.sass */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 1, ../sass/_base.sass */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  background: url(../images/bg.jpg) repeat 0 0;
+}
+
+/* line 10, ../sass/_base.sass */
+.content {
+  position: relative;
+  height: 100%;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+/* line 16, ../sass/_base.sass */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 22, ../sass/_base.sass */
+.quote {
+  position: relative;
+  top: 50%;
+  display: block;
+  padding: 0 2em;
+  color: orange;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 30, ../sass/_base.sass */
+.quote:hover {
+  color: #fff;
+}
+
+/* line 33, ../sass/_base.sass */
+.reload, .add-quote {
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  margin: auto;
+  color: #fff;
+  font-size: 2.5em;
+  line-height: 1em;
+  background: none;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 44, ../sass/_base.sass */
+.reload {
+  right: 25px;
+}
+/* line 46, ../sass/_base.sass */
+.reload:hover {
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/* line 49, ../sass/_base.sass */
+.add-quote {
+  left: 25px;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
+  zoom: 1;
+}
+/* line 52, ../sass/_base.sass */
+.add-quote:hover {
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
+  zoom: 1;
+}
+/* line 54, ../sass/_base.sass */
+.add-quote.add-quote_active {
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
+  zoom: 1;
+}
+/* line 56, ../sass/_base.sass */
+.add-quote.add-quote_active:hover {
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/* line 59, ../sass/_base.sass */
+.quote-block {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  left: 100px;
+  right: 100px;
+  top: 10px;
+  background: #1f2228;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* line 70, ../sass/_base.sass */
+.input, .textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 79, ../sass/_base.sass */
+.input:focus, .textarea:focus {
+  -moz-transform: scale(1.01, 1.01);
+  -ms-transform: scale(1.01, 1.01);
+  -webkit-transform: scale(1.01, 1.01);
+  transform: scale(1.01, 1.01);
+}
+
+/* line 82, ../sass/_base.sass */
+.textarea {
+  resize: none;
+}
+
+/* line 85, ../sass/_base.sass */
+.submit {
+  float: right;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  background: orange;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 94, ../sass/_base.sass */
+.submit:focus, .submit:hover {
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+/* line 97, ../sass/_base.sass */
+.copyright {
+  font-size: 1em;
+  line-height: 2em;
+}
