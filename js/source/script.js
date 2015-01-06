@@ -63,9 +63,13 @@ $(document).ready(function(){
         },
         showQuote: function() {
             var randomModelIndex = _.random(0, this.collection.length-1);
-            var model = this.collection.get(randomModelIndex);
-            var view = new QuoteView({model: model});
+            console.log('randomModelIndex', randomModelIndex);
+            randomModel = this.collection.get(randomModelIndex);
+            console.log('randomModel', randomModel);
+
+            var view = new QuoteView({model: randomModel});
             this.quote.html(view.render().el);
+            console.log(this.quote.html(view.render().el));
         }
     });
 
