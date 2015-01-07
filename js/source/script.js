@@ -26,7 +26,7 @@ $(document).ready(function(){
 
     QuoteView = Backbone.View.extend({
         tagName: 'span',
-        template: _.template("<%= title %>"),
+        template: _.template("<%= quote %>"),
         initialize: function() {
             this.listenTo(this.model, "change", this.render);
         },
@@ -39,10 +39,11 @@ $(document).ready(function(){
     QuotesAppView = Backbone.View.extend({
         el: $('.quotes-app'),
         events: {
-            "click .submit": "createQuote"
+            "click .submit": "createQuote",
+            "click .reload": "showQuote"
         },
         initialize: function() {
-            console.log('INIT');
+            var self = this;
             this.quote = this.$('.quote');
             this.quoteInput = this.$('.quote-input');
             this.secretWordInput = this.$('.secret-word-input');
@@ -50,16 +51,32 @@ $(document).ready(function(){
         createQuote: function(e) {
             e.preventDefault();
 
-            console.log('CREATE');
-            if (!this.quoteInput.val() || !this.secretWordInput.val() || this.secretWordInput.val() !== 'motofamily') { return; }
+            var date = new Date();
+
+            if (!this.quoteInput.val() || !this.secretWordInput.val() || this.secretWordInput.val() !== 'motofamily') { 
+                addQuoteBtn.trigger('click');
+                return;
+            }
 
             this.collection.create({
                 quote: this.quoteInput.val(),
-                time: new Date()
+                date: date.toString()
             });
+            addQuoteBtn.trigger('click');
+        },
+        showQuote: function() {
+            if (this.collection.length === 0) { return; }
+            var randomModelIndex = _.random(0, this.collection.length-1);
+            randomModel = this.collection.at(randomModelIndex);
+
+            var view = new QuoteView({model: randomModel});
+            this.quote.html(view.render().el);
         }
     });
 
-    col = collection = new QuoteCollection();
-    qa = app = new QuotesAppView({collection: collection});
+    collection = new QuoteCollection();
+    app = new QuotesAppView({collection: collection});
+    collection.on('sync', function() {
+        app.showQuote();
+    });
 });
