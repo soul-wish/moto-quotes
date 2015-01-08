@@ -43,9 +43,9 @@ $(document).ready(function(){
             "click .reload": "showQuote"
         },
         initialize: function() {
-            var self = this;
             this.quote = this.$('.quote');
             this.quoteInput = this.$('.quote-input');
+            this.authorInput = this.$('.author-input');
             this.secretWordInput = this.$('.secret-word-input');
         },
         createQuote: function(e) {
@@ -60,6 +60,8 @@ $(document).ready(function(){
 
             this.collection.create({
                 quote: this.quoteInput.val(),
+                author: this.authorInput.val(),
+                likes: 0,
                 date: date.toString()
             });
             addQuoteBtn.trigger('click');
