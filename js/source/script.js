@@ -25,7 +25,7 @@ $(document).ready(function(){
     });
 
     QuoteView = Backbone.View.extend({
-        tagName: 'span',
+        tagName: 'pre',
         template: _.template("<%= quote %>"),
         initialize: function() {
             this.listenTo(this.model, "change", this.render);

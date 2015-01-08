@@ -109,8 +109,12 @@ body {
 .quote:hover {
   color: #fff;
 }
+/* line 32, ../sass/_base.sass */
+.quote pre {
+  display: inline;
+}
 
-/* line 33, ../sass/_base.sass */
+/* line 35, ../sass/_base.sass */
 .reload, .add-quote {
   position: absolute;
   z-index: 2;
@@ -127,11 +131,11 @@ body {
   transition: 0.5s;
 }
 
-/* line 44, ../sass/_base.sass */
+/* line 46, ../sass/_base.sass */
 .reload {
   right: 25px;
 }
-/* line 46, ../sass/_base.sass */
+/* line 48, ../sass/_base.sass */
 .reload:hover {
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
@@ -142,7 +146,7 @@ body {
   zoom: 1;
 }
 
-/* line 49, ../sass/_base.sass */
+/* line 51, ../sass/_base.sass */
 .add-quote {
   left: 25px;
   -moz-transform: rotate(45deg);
@@ -153,7 +157,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
   zoom: 1;
 }
-/* line 52, ../sass/_base.sass */
+/* line 54, ../sass/_base.sass */
 .add-quote:hover {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -163,7 +167,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
   zoom: 1;
 }
-/* line 54, ../sass/_base.sass */
+/* line 56, ../sass/_base.sass */
 .add-quote.add-quote_active {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -173,7 +177,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
   zoom: 1;
 }
-/* line 56, ../sass/_base.sass */
+/* line 58, ../sass/_base.sass */
 .add-quote.add-quote_active:hover {
   -moz-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
@@ -184,7 +188,7 @@ body {
   zoom: 1;
 }
 
-/* line 59, ../sass/_base.sass */
+/* line 61, ../sass/_base.sass */
 .quote-block {
   position: absolute;
   display: none;
@@ -197,7 +201,7 @@ body {
   padding: 16px;
 }
 
-/* line 70, ../sass/_base.sass */
+/* line 72, ../sass/_base.sass */
 .input, .textarea {
   display: block;
   width: 100%;
@@ -214,7 +218,7 @@ body {
   -ms-transition: 0.5s;
   transition: 0.5s;
 }
-/* line 79, ../sass/_base.sass */
+/* line 81, ../sass/_base.sass */
 .input:focus, .textarea:focus {
   -moz-transform: scale(1.01, 1.01);
   -ms-transform: scale(1.01, 1.01);
@@ -222,12 +226,12 @@ body {
   transform: scale(1.01, 1.01);
 }
 
-/* line 82, ../sass/_base.sass */
+/* line 84, ../sass/_base.sass */
 .textarea {
   resize: none;
 }
 
-/* line 85, ../sass/_base.sass */
+/* line 87, ../sass/_base.sass */
 .submit {
   float: right;
   color: #fff;
@@ -242,7 +246,7 @@ body {
   -ms-transition: 0.5s;
   transition: 0.5s;
 }
-/* line 94, ../sass/_base.sass */
+/* line 96, ../sass/_base.sass */
 .submit:focus, .submit:hover {
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
@@ -250,12 +254,12 @@ body {
   transform: scale(1.1, 1.1);
 }
 
-/* line 97, ../sass/_base.sass */
+/* line 99, ../sass/_base.sass */
 .copyright {
   font-size: 1em;
   line-height: 2em;
 }
-/* line 100, ../sass/_base.sass */
+/* line 102, ../sass/_base.sass */
 .copyright a {
   color: orange;
   text-decoration: none;
@@ -265,7 +269,7 @@ body {
   -ms-transition: 0.5s;
   transition: 0.5s;
 }
-/* line 104, ../sass/_base.sass */
+/* line 106, ../sass/_base.sass */
 .copyright a:hover {
   text-decoration: none;
   color: #fff;
