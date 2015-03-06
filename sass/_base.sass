@@ -1,37 +1,63 @@
 body
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif 
+    font-family: 'Noto Sans', sans-serif
     font-size: 16px
-    line-height: 1.5
+    line-height: 1.2
     color: #fff
-    background: url(../images/bg.jpg) repeat 0 0 
+    background: url(../images/bg.png) repeat 0 0 
     
 .header 
+    position: relative
     
 .content
     position: relative
-    height: 100%
-    min-height: 250px 
-    font-size: 2.5em
+    min-height: calc(100% - 165px - 48px)
+    font-size: 36px
     text-align: center
 
-.footer
-    position: fixed
-    bottom: 0
+.footer  
     width: 100%
     text-align: center
+    background: rgba(0, 0, 0, .2)
 
 .quote
     position: relative
-    top: 50%
     display: block
-    padding: 0 2em
-    color: orange 
-    +translateY(-50%)
-    +transition(0.5s)
-    &:hover
-        color: #fff
+    padding: 20vh 0 0
+    color: #fff 
+    width: 980px
+    margin: auto
     pre
         display: inline
+        white-space: pre-wrap
+        white-space: -moz-pre-wrap
+        white-space: -pre-wrap
+        white-space: -o-pre-wrap
+        word-wrap: break-word
+        
+.buttons
+    width: 980px
+    margin: auto
+    padding: 0 0 2em
+
+.button
+    color: #fff
+    font-size: 16px
+    text-decoration: none
+    opacity: 0.4
+    &:hover
+        opacity: 1 
+    &.button-prev
+        float: left
+        .icon
+            +s(arrow-left)
+    &.button-next
+        float: right
+        .icon
+            +s(arrow-right)
+    .icon
+        display: block
+        margin: auto
+        margin-top: 10px
 
 .reload, .add-quote
     position: absolute
@@ -50,33 +76,44 @@ body
         +rotate(360)
 
 .add-quote
-    left: 25px
-    +rotate(45)
+    right: 0
+    color: #7e7b82
+    font-weight: bold  
     &:hover
-        +rotate(-45)
+        color: #fff
     &.add-quote_active
-        +rotate(0)
-        &:hover
-            +rotate(-90)
+        +rotate(45)
 
 .quote-block
     position: absolute
     display: none
     z-index: 10
-    left: 100px
-    right: 100px
-    top: 10px
-    background: #1f2228 
+    left: 0
+    right: 60px
+    top: 20px
+    background: #040405 
     border-radius: 10px
     padding: 16px
+    &:after
+        content: ' '
+        position: absolute
+        top: 15px
+        right: -20px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 13px 0 13px 20px
+        border-color: transparent transparent transparent #040405
     
 .input, .textarea
     display: block
     width: 100%
-    margin-bottom: 10px
-    font-size: 1em
-    padding: 10px
+    margin-bottom: 16px
+    padding: 16px
     border-radius: 5px
+    color: #777
+    font-family: "NotoSans", sans-serif
+    font-size: 16px
     +box
     +transition(0.5s)
     &:focus
@@ -84,26 +121,38 @@ body
 
 .textarea
     resize: none
+    height: 96px
 
 .submit
     float: right
-    color: #fff 
-    font-size: 1.2em
     border-radius: 5px
-    background: orange
-    padding: 8px 15px
+    background: #ff9000
+    padding: 14px 15px
     text-transform: uppercase
+    color: #fff
+    font-size: 18px
     +transition(0.5s)
     &:focus, &:hover
-        +scale(1.1)
+        +scale(1.05)
 
 .copyright
-    font-size: 1em
-    line-height: 2em
+    font-size: 14px
+    line-height: 48px
+    color: #838087
     a
-        color: orange 
         text-decoration: none
+        color: orange 
         +transition(0.5s)
         &:hover
             text-decoration: none
             color: #fff
+            
+.container
+    width: 980px
+    position: relative
+    margin: auto
+    
+.logo
+    margin-top: 20px
+    display: inline-block
+    +s(logo)

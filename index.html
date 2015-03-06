@@ -5,6 +5,7 @@
         <title>Moto Quotes</title>
         <meta name="robots" content="noindex">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Noto+Sans&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,20 +13,26 @@
     </head>
     <body class="quotes-app">
         <header class="header">
-            <button class="add-quote">&times;</button>
-            <button class="reload">&#8635;</button>
-            <div class="quote-block">
-                <form class="add-quote-form">
-                    <textarea name="quote" class="textarea quote-input" placeholder="Quote:"></textarea>
-                    <input type="text" class="input author-input" placeholder="Author:">
-                    <input type="text" class="input secret-word-input" placeholder="Secret word:">
-                    <button class="submit">Add Quote</button>
-                </form>
+            <div class="container">
+                <span class="logo"></span>
+                <button class="add-quote">+</button>
+                <div class="quote-block">
+                    <form class="add-quote-form">
+                        <textarea name="quote" class="textarea quote-input" placeholder="Цитата:"></textarea>
+                        <input type="text" class="input author-input" placeholder="Автор Цитаты:">
+                        <input type="text" class="input secret-word-input" placeholder="Секретное слово:">
+                        <button class="submit">добавить цитату</button>
+                    </form>
+                </div>
             </div>
         </header>
 
         <section class="content">
             <q class="quote">Loading Moto Quotes...</q>
+            <div class="buttons">
+                <a href="#" class="button button-prev prev-quote" data-direction="prev">туда<span class="icon"></span></a>
+                <a href="#" class="button button-next next-quote" data-direction="next">сюда<span class="icon"></span></a>
+            </div>
         </section>
 
         <footer class="footer">

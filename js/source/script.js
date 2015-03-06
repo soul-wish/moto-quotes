@@ -13,7 +13,6 @@ $(document).ready(function(){
         e.preventDefault();
 
         $(this).toggleClass('add-quote_active');
-
         addQuoteForm.toggle(300);
     });
     
@@ -40,7 +39,9 @@ $(document).ready(function(){
         el: $('.quotes-app'),
         events: {
             "click .submit": "createQuote",
-            "click .reload": "showQuote"
+            "click .reload": "showQuote",
+            "click .prev-quote": "showAnotherQuote",
+            "click .next-quote": "showAnotherQuote"
         },
         initialize: function() {
             this.quote = this.$('.quote');
@@ -66,13 +67,40 @@ $(document).ready(function(){
             });
             addQuoteBtn.trigger('click');
         },
-        showQuote: function() {
+        showRandomQuote: function() {
             if (this.collection.length === 0) { return; }
             var randomModelIndex = _.random(0, this.collection.length-1);
-            randomModel = this.collection.at(randomModelIndex);
+            var randomModel = this.collection.at(randomModelIndex);
 
             var view = new QuoteView({model: randomModel});
             this.quote.html(view.render().el);
+        },
+        showQuote: function() {
+            if (this.collection.length === 0) { return; }
+            var view = new QuoteView({model: this.collection.at(0)});
+            localStorage.setItem('index', 0);
+            this.quote.html(view.render().el);
+        },
+        showAnotherQuote: function(e) {
+            e.preventDefault();
+            if (this.collection.length === 0) { return; }
+            var view,
+                direction = $(e.currentTarget).data('direction');
+                modelIndex = parseInt(localStorage.getItem('index'));
+
+            modelIndex = (direction === 'next') ? modelIndex + 1 : modelIndex - 1;
+
+            if (modelIndex === -1) {
+                view = new QuoteView({model: this.collection.at(this.collection.length-1)});
+                localStorage.setItem('index', this.collection.length-1);
+                this.quote.html(view.render().el);
+            } else if (modelIndex === this.collection.length) {
+                this.showQuote();
+            } else {
+                view = new QuoteView({model: this.collection.at(modelIndex)});
+                localStorage.setItem('index', modelIndex);
+                this.quote.html(view.render().el);
+            }
         }
     });
 
