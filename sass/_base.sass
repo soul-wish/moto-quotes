@@ -11,7 +11,6 @@ body
 .content
     position: relative
     min-height: calc(100% - 165px - 48px)
-    font-size: 36px
     text-align: center
 
 .footer  
@@ -20,12 +19,14 @@ body
     background: rgba(0, 0, 0, .2)
 
 .quote
-    position: relative
     display: block
     padding: 20vh 0 0
     color: #fff 
-    width: 980px
-    margin: auto
+    font-size: 36px
+    @media screen and (max-width: 797px)
+        font-size: 28px
+    @media screen and (max-width: 479px)
+        font-size: 24px
     pre
         display: inline
         white-space: pre-wrap
@@ -35,9 +36,8 @@ body
         word-wrap: break-word
         
 .buttons
-    width: 980px
-    margin: auto
     padding: 0 0 2em
+    +clr
 
 .button
     color: #fff
@@ -148,9 +148,13 @@ body
             color: #fff
             
 .container
-    width: 980px
+    width: 1170px
     position: relative
     margin: auto
+    @media screen and (max-width: 1200px)
+        width: 980px
+    @media screen and (max-width: 979px)
+        width: 92%
     
 .logo
     margin-top: 20px

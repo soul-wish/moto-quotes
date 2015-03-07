@@ -81,27 +81,36 @@ body {
 .content {
   position: relative;
   min-height: calc(100% - 165px - 48px);
-  font-size: 36px;
   text-align: center;
 }
 
-/* line 17, ../sass/_base.sass */
+/* line 16, ../sass/_base.sass */
 .footer {
   width: 100%;
   text-align: center;
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 22, ../sass/_base.sass */
+/* line 21, ../sass/_base.sass */
 .quote {
-  position: relative;
   display: block;
   padding: 20vh 0 0;
   color: #fff;
-  width: 980px;
-  margin: auto;
+  font-size: 36px;
 }
-/* line 29, ../sass/_base.sass */
+@media screen and (max-width: 797px) {
+  /* line 21, ../sass/_base.sass */
+  .quote {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 479px) {
+  /* line 21, ../sass/_base.sass */
+  .quote {
+    font-size: 24px;
+  }
+}
+/* line 30, ../sass/_base.sass */
 .quote pre {
   display: inline;
   white-space: pre-wrap;
@@ -111,11 +120,16 @@ body {
   word-wrap: break-word;
 }
 
-/* line 37, ../sass/_base.sass */
+/* line 38, ../sass/_base.sass */
 .buttons {
-  width: 980px;
-  margin: auto;
   padding: 0 0 2em;
+  *zoom: 1;
+}
+/* line 87, ../sass/libs/_mixins.sass */
+.buttons:after {
+  content: " ";
+  display: table;
+  clear: both;
 }
 
 /* line 42, ../sass/_base.sass */
@@ -314,12 +328,24 @@ body {
 
 /* line 150, ../sass/_base.sass */
 .container {
-  width: 980px;
+  width: 1170px;
   position: relative;
   margin: auto;
 }
+@media screen and (max-width: 1200px) {
+  /* line 150, ../sass/_base.sass */
+  .container {
+    width: 980px;
+  }
+}
+@media screen and (max-width: 979px) {
+  /* line 150, ../sass/_base.sass */
+  .container {
+    width: 92%;
+  }
+}
 
-/* line 155, ../sass/_base.sass */
+/* line 159, ../sass/_base.sass */
 .logo {
   margin-top: 20px;
   display: inline-block;
