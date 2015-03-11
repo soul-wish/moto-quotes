@@ -3,26 +3,38 @@ body
     font-size: 16px
     line-height: 1.2
     color: #fff
-    background: url(../images/bg.png) repeat 0 0 
+    background: url(../images/bg.jpg) repeat 0 0 
     
 .header 
     position: relative
     
 .content
     position: relative
-    min-height: calc(100% - 165px - 48px)
+    min-height: calc(100% - 265px - 48px)
     text-align: center
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-bottom: 100px
 
 .footer  
     width: 100%
     text-align: center
     background: rgba(0, 0, 0, .2)
+    
+.quote-wrapper
+    position: relative
 
 .quote
     display: block
-    padding: 20vh 0 0
     color: #fff 
     font-size: 36px
+    padding: 0 75px
+    +box
     @media screen and (max-width: 797px)
         font-size: 28px
     @media screen and (max-width: 479px)
@@ -34,9 +46,14 @@ body
         white-space: -pre-wrap
         white-space: -o-pre-wrap
         word-wrap: break-word
+        font-family: 'Noto Sans', sans-serif
         
 .buttons
-    padding: 0 0 2em
+    position: absolute
+    top: 50%
+    margin-top: -18px
+    width: 100%
+    z-index: 10 
     +clr
 
 .button

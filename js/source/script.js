@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var addQuoteBtn = $('.add-quote'),
         addQuoteForm = $('.quote-block'),
-        reloadQuoteBtn = $('.reload'),
         Quote,
         QuoteCollection,
         QuoteView,
