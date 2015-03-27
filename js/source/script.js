@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     QuoteCollection = Backbone.Firebase.Collection.extend({
         model: Quote,
-        url: "https://motoquotes.firebaseio.com"
+        url: "https://motoquotes.firebaseio.com/quotes"
     });
 
     QuoteView = Backbone.View.extend({
